@@ -55,7 +55,13 @@ def scan_resources(payload: ScanRequest):
         }
 
     except ClientError as e:
-        raise HTTPException(
-            status_code=401,
-            detail=str(e)
-        )
+        
+        code = e.response["Error"]["Code"]
+
+        if code in ["InvalidClientTokenId", "AuthFailure"]:
+            raise HTTPException(status_code=401, detail="Invalid AWS credentials")
+        elif code == "AccessDenied":
+            raise HTTPException(status_code=403, detail="Insufficient AWS permissions")
+        else:
+            raise HTTPException(status_code=400, detail=str(e))
+
