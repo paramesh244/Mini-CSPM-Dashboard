@@ -104,7 +104,8 @@ graph TD
     CloudFront --> S3[React Frontend]
     CloudFront --> ALB[Application Load Balancer]
     ALB --> ECS[ECS Fargate - FastAPI]
-    ECS --> AWS[AWS APIs (EC2, S3)]
+    ECS --> AWS[AWS APIs - EC2 and S3]
+```
 
 ## 5. Scalability & Reliability
 
