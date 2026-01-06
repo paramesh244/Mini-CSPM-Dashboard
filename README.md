@@ -34,17 +34,6 @@ This project demonstrates a **production mindset**, focusing on clean architectu
 
 ---
 
-## Security Considerations
-
-- During **local development**, communication occurs over `http://localhost`, which is safe as traffic does not leave the local machine.
-- In a **production deployment**, all client-server communication would be enforced over **HTTPS (TLS)** using an Application Load Balancer and ACM certificates.
-- AWS credentials:
-  - Are transmitted securely in production via TLS
-  - Are used only in memory to create a temporary AWS session
-  - Are never logged, stored, or persisted in any database
-
----
-
 ## Tech Stack
 
 ### Backend
@@ -55,20 +44,29 @@ This project demonstrates a **production mindset**, focusing on clean architectu
 ### Frontend
 - React
 - Vanilla CSS
-- Fetch API
 
 ### Cloud
 - AWS (EC2, S3)
 
 ---
 
-## Setup Instructions
+
+
+
+### Setup Instructions(Backend + Frontend)
 
 ### Prerequisites
 - Python 3.9+
 - Node.js 18+
 - AWS account with EC2 / S3 access
 
+
+Clone repository
+```bash
+git clone https://github.com/paramesh244/Mini-CSPM-Dashboard.git
+cd Mini-CSPM-Dashboard
+
+```
 ---
 
 ## Backend Setup
@@ -104,12 +102,13 @@ uvicorn app.main:app --reload
 
 ## Backend will be available at:
 
-http://localhost:8000
+- http://localhost:8000
 
 ---
 ## Swagger API docs:
 
-http://localhost:8000/docs
+- http://localhost:8000/docs
+
 ---
 ## Frontend Setup
 ```bash
@@ -120,7 +119,7 @@ npm start
 
 ## Frontend will be available at:
 
--http://localhost:3000
+- http://localhost:3000
 
 ---
 
