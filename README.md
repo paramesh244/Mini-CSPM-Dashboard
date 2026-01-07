@@ -52,14 +52,7 @@ This project demonstrates a **production mindset**, focusing on clean architectu
 
 
 
-
 ### Setup Instructions(Backend + Frontend)
-
-### Prerequisites
-- Python 3.9+
-- Node.js 18+
-- AWS account with EC2 / S3 access
-
 
 Clone repository
 ```bash
@@ -67,9 +60,58 @@ git clone https://github.com/paramesh244/Mini-CSPM-Dashboard.git
 cd Mini-CSPM-Dashboard
 
 ```
+
+
+## 🐳 Running the Application with Docker (One Command)
+
+The application can be started locally using **Docker Compose**, which spins up both the backend and frontend services with a single command.
+
+### Prerequisites
+- Docker
+- Docker Compose
+
 ---
 
+### Start Backend & Frontend
+
+From the project root directory, run:
+
+```bash
+docker-compose up --build
+```
+
+### This will:
+
+- Build the backend FastAPI Docker image
+- Build the frontend React Docker image
+- Start both services together
+
+## Access the Application
+
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:8000
+  
+- Backend API Docs (Swagger): http://localhost:8000/docs
+
+### Stop the services
+### To stop all running containers:
+```bash
+docker-compose down
+```
+
+
+---
+
+## Local Setup Without Docker
+
 ## Backend Setup
+
+### Prerequisites
+- Python 3.9+
+- Node.js 18+
+- AWS account with EC2 / S3 access
+
+
 
 ## For Windows
 ```bash
@@ -110,7 +152,7 @@ uvicorn app.main:app --reload
 - http://localhost:8000/docs
 
 ---
-## Frontend Setup
+## Frontend Setup (Windows + Mac)
 ```bash
 cd frontend
 npm install
@@ -122,6 +164,7 @@ npm start
 - http://localhost:3000
 
 ---
+
 
 ## AWS Credentials Setup
 
